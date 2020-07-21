@@ -1,2 +1,2 @@
 # flask-gallery
-Flask-based data visualization implementations.
+Flask-based data visualizations.
