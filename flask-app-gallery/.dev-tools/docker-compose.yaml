@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    flask_d3_app_dev:
+        image: flask_d3_app_dev:1.00
+        container_name: flask_d3_app_dev
+        restart: unless-stopped
+        command: python manage.py runserver --host=0.0.0.0 --port=3000
+        build:
+            context: ../
+            dockerfile: .dev-tools/Dockerfile.test
+        ports:
+            - "5000:5000"
+        volumes:
+            - ..:/usr/app
