@@ -2,7 +2,7 @@
 
 Open-sourced data visualizations.
 
-## vrp_data.json
+## vrp_demand.json
 
 Actual vrp input data with randomized output data for visualizing.
 

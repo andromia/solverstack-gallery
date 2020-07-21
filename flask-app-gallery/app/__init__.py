@@ -5,7 +5,6 @@ from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_bootstrap import Bootstrap
-from flask_assets import Environment, Bundle
 from flask_caching import Cache
 from config import Config
 __version__ = 'v0.0.0'

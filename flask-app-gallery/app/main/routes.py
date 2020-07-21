@@ -34,6 +34,6 @@ def get_static_json(filename:str):
 @bp.route('/vrp', methods=['GET', 'POST'])
 def vrp():
     if request.method == 'GET':
-        data = get_static_json('vrp_data.json')
+        data = get_static_json('vrp_origins.json')
 
     return render_template('vrp.html', data=data)
