@@ -10,6 +10,10 @@ from flask_caching import Cache
 from config import Config
 __version__ = 'v0.0.0'
 
+
+# TODO: register 'static' folder to app
+ROOT = Config.ROOT
+
 db = SQLAlchemy()
 migrate = Migrate()
 bootstrap = Bootstrap()

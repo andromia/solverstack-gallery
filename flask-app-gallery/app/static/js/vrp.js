@@ -8,16 +8,18 @@ function onlyUnique(value, index, self) {
 
 function buildVrpMap(data) {
 
+    console.log("data", data)
+
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
     }
 
-    var pallets = unpack(data, 'pallets'),
-        lat = unpack(data, 'latitude'),
-        lon = unpack(data, 'longitude'),
-        cluster = unpack(data, 'cluster'),
-        vehicle = unpack(data, 'vehicle_id'),
-        stop_num = unpack(data, 'stop_num')
+    var pallets = unpack(data, "pallets"),
+        lat = unpack(data, "latitude"),
+        lon = unpack(data, "longitude"),
+        cluster = unpack(data, "cluster"),
+        vehicle = unpack(data, "vehicle_id"),
+        stop_num = unpack(data, "stop_num")
         size = [],
         hoverText = [],
         //scale = 2.* Math.max(null, pallets) / (100**2);
