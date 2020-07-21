@@ -10,12 +10,13 @@ RUN python -m pip install -r requirements-dev.txt
 
 COPY . /app
 
-ENV FLASK_APP app
-ENV FLASK_ENV development
-ENV FLASK_DEBUG 1
+# TODO
+ENV FLASK_APP=app
+ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
 ENTRYPOINT [ "python" ]
 
 # Set and expose port
-ENV PORT 5000
-EXPOSE 5000
+ENV PORT 3000
+EXPOSE 3000
