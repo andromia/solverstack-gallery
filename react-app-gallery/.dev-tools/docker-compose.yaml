@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    react_d3_app_dev:
+        image: react_d3_app_dev:1.00
+        container_name: react_d3_app_dev
+        restart: unless-stopped
+        command: yarn start
+        build:
+            context: ../
+            dockerfile: .dev-tools/Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - ..:/usr/src/app
+        stdin_open: true

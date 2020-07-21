@@ -39,9 +39,12 @@ if Vagrant::Util::Platform.windows? then
         apt-get dist-upgrade -y
         apt-get install -y python3-dev python3-wheel python3-setuptools python3-six python3-pip
         cd /vagrant
+        pip3 install -r flask-gallery/requirements.txt
+        pip3 install -r flask-gallery/requirements-dev.txt
         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
         echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
         sudo apt-get -y update && sudo apt-get -y install yarn
+        cd react-gallery
         yarn install
       SHELL
   
