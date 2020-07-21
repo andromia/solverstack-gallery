@@ -1,7 +1,9 @@
 # solverstack-open-gallery
+
 Open-sourced data visualizations.
 
 ## vrp_data.json
+
 Actual vrp input data with randomized output data for visualizing.
 
 ```python
