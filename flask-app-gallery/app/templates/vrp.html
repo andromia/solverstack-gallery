@@ -8,15 +8,16 @@
 {% block app_content %}
     
     <div class="container">
-            <div id="vrp-map" width="440" height="300"></div>
+        <div class="row">
+            <svg id="origins-map" width="700" height="400"></svg>
         </div>
     </div>
 
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js", charset="utf-8"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js", charset="utf-8"></script>
     <script src="{{ url_for('static', filename='js/vrp.js') }}"></script>
     <script type="text/javascript" charset="utf-8">
         data = {{ data | tojson }}
-        buildVrpMap(data);
+        plotOrigins(data);
     </script>
 {% endblock %}
