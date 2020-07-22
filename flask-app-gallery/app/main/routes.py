@@ -4,7 +4,7 @@ from app.utils import url_for
 
 from flask import render_template, flash, redirect, request, g, \
     jsonify, current_app, make_response
-from json import load
+from json import loads
 
 import os
 
@@ -27,9 +27,10 @@ def get_static_json(filename:str):
     returns json.load() obj
     """
     json_path = os.path.join(ROOT, 'app', 'static', filename)
-    data = load(open(json_path))
+    with open(json_path) as f:
+        data = loads(f.read())
 
-    return data
+        return data
 
 @bp.route('/vrp', methods=['GET', 'POST'])
 def vrp():
