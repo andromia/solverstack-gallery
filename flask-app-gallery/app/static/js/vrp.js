@@ -13,7 +13,7 @@ function getMapCenter(markers) {
     for (i = 0; i < markers.length; i++) {
         latSum = latSum + markers[i].latitude;
         lonSum = lonSum + markers[i].longitude;
-      }
+    }
     
     let center = [lonSum / markers.length, latSum / markers.length];
 
@@ -26,7 +26,7 @@ function drawOrigins(svg, projection, markers) {
         .then(function(data) {
 
         // Filter data
-        data.features = data.features.filter( function(d){return d.properties.name=="USA"} );
+        //data.features = data.features.filter( function(d){return d.properties.name=="USA"} );
 
         // Draw the map
         svg.append("g")
