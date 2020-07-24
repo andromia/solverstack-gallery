@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-from . import common
 import logging
 
 from datetime import datetime, timedelta
 import unittest
 from app import create_app, db
-from app.models import User
 from config import Config
+
+import pytest
 
 
 class TestConfig(Config):
