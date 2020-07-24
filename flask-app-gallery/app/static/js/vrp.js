@@ -21,6 +21,8 @@ function getMapCenter(markers) {
 }
 
 function drawOrigins(svg, projection, markers) {
+    // TODO: update for multiple markers
+
     // Load external data and boot
     d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
         .then(function(data) {
@@ -41,6 +43,13 @@ function drawOrigins(svg, projection, markers) {
             .style("stroke", "black")
             .style("opacity", .3)
 
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
+            .text([markers[0].latitude, markers[0].longitude]);
+
         // Add circles:
         svg
         .selectAll("myCircles")
@@ -54,6 +63,9 @@ function drawOrigins(svg, projection, markers) {
             .attr("stroke", "#69b3a2")
             .attr("stroke-width", 3)
             .attr("fill-opacity", .4)
+            .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+	        .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+	        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
     }).catch(function(error) {
         console.log("error", error);
     });
